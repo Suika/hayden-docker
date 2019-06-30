@@ -4,5 +4,5 @@ RUN git clone https://github.com/bbepis/Hayden build && cd /build && dotnet publ
 FROM alpine:latest
 CMD ["/hayden/Hayden"]
 WORKDIR /hayden
-RUN apk add --update --no-cache libstdc++ glib icu-libs
+RUN apk add --update --no-cache libstdc++ glib icu-libs libcurl
 COPY --from=builder /hayden /hayden
